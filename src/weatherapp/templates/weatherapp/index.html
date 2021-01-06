@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Weather App</h1> <br>
+
+    {% if messages %}
+
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+
+    {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Add</button>
+
+    </form> <br>
+    {% for i in city_data %}
+    {{ i.city }} <br>
+    <img src="http://openweathermap.org/img/w/{{ i.icon }}.png" alt="Image"> <br>
+    {{ i.temp }} <br>
+    {{ i.description }} <br>
+    <hr>
+
+    {% endfor %}
+</body>
+
+</html>
