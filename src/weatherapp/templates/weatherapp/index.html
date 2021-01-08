@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 
-<body>
-    <h1>Weather App</h1> <br>
+<body style='text-align:center; background-color: aquamarine;'>
+    <h1 style='color:blue; text-align:center;' >Weather App</h1> <br>
 
     {% if messages %}
 
@@ -18,7 +18,8 @@
 
     {% endif %}
 
-    <form action="" method="post">
+    <form action="" method="post" style='color:brown; text-align:center;'>
+
         {% csrf_token %}
         {{ form }}
         <button type="submit">Add</button>
